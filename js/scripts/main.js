@@ -120,6 +120,13 @@ function closeMenuMobile() {
 }
 
 
+const fecharMenu = document.querySelector('.js-btn-tab');
+
+fecharMenu.addEventListener('click', () => {
+    document.documentElement.classList.remove('menu-opened');
+})
+
+
 
 Btnmenu.addEventListener('click', openMenuMobile);
 overlayMenu.addEventListener('click', closeMenuMobile);
