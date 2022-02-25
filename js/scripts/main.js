@@ -70,7 +70,7 @@ modal.addEventListener('click', (event) => {
     event.preventDefault();
     let html = document.documentElement;
     html.classList.add('show-modal');
-    document.documentElement.classList.remove('menu-opened');
+    //document.documentElement.classList.remove('menu-opened');
 })
 
 closeModal.addEventListener('click', () => {
@@ -79,14 +79,15 @@ closeModal.addEventListener('click', () => {
 
 })
 
-const btnMenu = document.querySelectorAll('.js-btn-tab');
-const MenuSite = document.querySelectorAll('.js-menu');
+const btnMenu = document.querySelectorAll('.js-btn-menu');
+const menuSite = document.querySelectorAll('.js-menu');
+
 
 btnMenu.forEach((btn, index) => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
 
-        MenuSite.forEach(itemMenu => {
+        menuSite.forEach(itemMenu => {
             itemMenu.classList.remove('active');
             itemMenu.addEventListener('mouseleave', () => { 
                 itemMenu.classList.remove('active');
@@ -100,9 +101,11 @@ btnMenu.forEach((btn, index) => {
             itemBtn.classList.remove('active');
         })
 
-        btn.classList.add('active');
+      
 
-        MenuSite[index].classList.add('active');
+        btn.classList.add('active');
+        
+        menuSite[index].classList.add('active');
 
         document.documentElement.classList.remove('menu-opened');
     })
@@ -148,3 +151,45 @@ function scrollToSection(e) {
     behavior: 'smooth'
   })
 }
+
+
+
+// mobile
+
+const modalMobile = document.querySelector('.js-open-modal-mobile');
+const closeModalMobile = document.querySelector('.js-close-mobile');
+
+modalMobile.addEventListener('click', (event) => {
+    event.preventDefault();
+    let htmlMobile = document.documentElement;
+    htmlMobile.classList.add('show-modal');
+    document.documentElement.classList.remove('menu-opened');
+})
+
+
+const btnMenuMobile = document.querySelectorAll('.js-btn-mobile');
+const menuSiteMobile = document.querySelectorAll('.js-mobile');
+
+btnMenuMobile.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        btnMenuMobile.forEach(itemMobile => {
+            itemMobile.classList.remove('active');
+            
+        })
+
+        menuSiteMobile[index].classList.add('active');
+
+        btn.classList.add('active');
+
+        document.documentElement.classList.remove('menu-opened');
+    })
+})
+
+
+
+
+
+
+
