@@ -70,7 +70,7 @@ modal.addEventListener('click', (event) => {
     event.preventDefault();
     let html = document.documentElement;
     html.classList.add('show-modal');
-
+    document.documentElement.classList.remove('menu-opened');
 })
 
 closeModal.addEventListener('click', () => {
@@ -103,6 +103,8 @@ btnMenu.forEach((btn, index) => {
         btn.classList.add('active');
 
         MenuSite[index].classList.add('active');
+
+        document.documentElement.classList.remove('menu-opened');
     })
 
 
@@ -120,11 +122,8 @@ function closeMenuMobile() {
 }
 
 
-const fecharMenu = document.querySelector('.js-btn-tab');
 
-fecharMenu.addEventListener('click', () => {
-    document.documentElement.classList.remove('menu-opened');
-})
+
 
 
 
